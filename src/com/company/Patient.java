@@ -1,14 +1,24 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Patient {
+public class Patient implements Serializable {
     private int IDPatient;
-    private Date DateNaissance;
+    private int DateNaissance;
     private String CIN;
     private String nom;
     private String prenom;
     private String sexe;
+
+    public Patient(int IDPatient, int DateNaissance, String CIN, String nom, String prenom, String sexe) {
+        this.IDPatient = IDPatient;
+        this.DateNaissance = DateNaissance;
+        this.CIN = CIN;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.sexe = sexe;
+    }
 
     public int getIDPatient() {
         return IDPatient;
@@ -18,11 +28,11 @@ public class Patient {
         this.IDPatient = IDPatient;
     }
 
-    public Date getDateNaissance() {
+    public int getDateNaissance() {
         return DateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(int dateNaissance) {
         DateNaissance = dateNaissance;
     }
 
@@ -57,4 +67,9 @@ public class Patient {
     public void setSexe(String sexe) {
         this.sexe = sexe;
     }
+
+    public String toString(){
+        return IDPatient+" "+DateNaissance+" "+CIN+" "+nom+" "+prenom+" "+sexe;
+    }
 }
+

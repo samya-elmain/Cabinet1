@@ -1,16 +1,17 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Radio {
+public class Radio implements Serializable {
     private int IdRadio;
     private String RemarquesPositives;
     private String RemarquesNegatives;
     private String RemarquesGenerales;
-    private Date DateRadio;
+    private int DateRadio;
     private String CheminImage;
 
-    public Radio(int idRadio, String remarquesPositives, String remarquesNegatives, String remarquesGenerales, Date dateRadio, String cheminImage) {
+    public Radio(int idRadio, String remarquesPositives, String remarquesNegatives, String remarquesGenerales, int dateRadio, String cheminImage) {
         IdRadio = idRadio;
         RemarquesPositives = remarquesPositives;
         RemarquesNegatives = remarquesNegatives;
@@ -51,11 +52,11 @@ public class Radio {
         RemarquesGenerales = remarquesGenerales;
     }
 
-    public Date getDateRadio() {
+    public int getDateRadio() {
         return DateRadio;
     }
 
-    public void setDateRadio(Date dateRadio) {
+    public void setDateRadio(int dateRadio) {
         DateRadio = dateRadio;
     }
 
@@ -65,5 +66,8 @@ public class Radio {
 
     public void setCheminImage(String cheminImage) {
         CheminImage = cheminImage;
+    }
+    public String toString(){
+        return IdRadio+" "+RemarquesPositives+" "+RemarquesNegatives+" "+RemarquesGenerales+" "+DateRadio+" "+CheminImage;
     }
 }
